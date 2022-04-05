@@ -37,6 +37,7 @@ public sealed partial class TribeOfBattle : Mod, ITogglableMod {
 	}
 
 	private static string Localize(string key, string sheet, string orig) => sheet switch {
+		_ when running is false => orig,
 		"CP3" => key switch {
 			"NAME_MANTIS_LORD_V" => "Name".Localize(),
 			"GG_S_MANTIS_LORD_V" => "Desc".Localize(),

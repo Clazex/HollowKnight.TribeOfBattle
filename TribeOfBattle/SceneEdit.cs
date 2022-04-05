@@ -3,6 +3,8 @@ using HealthShare;
 namespace TribeOfBattle;
 
 public sealed partial class TribeOfBattle {
+	private static bool running = false;
+
 	private static void EditScene(Scene _, Scene next) {
 		if (Instance == null) {
 			goto Inactive;
@@ -15,6 +17,8 @@ public sealed partial class TribeOfBattle {
 		if (BossSequenceController.IsInSequence && !GlobalSettings.modifyPantheons) {
 			goto Inactive;
 		}
+
+		running = true;
 
 		if (!didGlobalChange) {
 			traitorSprite!.CurrentSprite.material.mainTexture = traitorTex.Value;
@@ -42,6 +46,8 @@ public sealed partial class TribeOfBattle {
 		return;
 
 	Inactive:
+		running = false;
+
 		if (didGlobalChange) {
 			traitorSprite!.CurrentSprite.material.mainTexture = traitorTexOrig;
 			grassPrefab!.SetActive(true);

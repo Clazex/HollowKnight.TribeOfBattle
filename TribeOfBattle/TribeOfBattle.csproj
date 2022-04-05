@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<AssemblyTitle>TribeOfBattle</AssemblyTitle>
-		<Version>1.0.0</Version>
+		<Version>1.0.1</Version>
 		<Authors>Clazex</Authors>
 
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
