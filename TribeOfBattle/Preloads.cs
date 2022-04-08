@@ -62,6 +62,7 @@ public sealed partial class TribeOfBattle {
 
 		prefab.name = "TOB Traitor Lord";
 		prefab.transform.SetPosition2D(35f, 22f);
+		prefab.transform.SetScaleX(prefab.transform.GetScaleX() * -1);
 		UObject.DestroyImmediate(prefab.Child("Pt Mist")!);
 		UObject.DestroyImmediate(prefab.GetComponent<EnemyDeathEffects>());
 		UObject.DestroyImmediate(prefab.GetComponent<InfectedEnemyEffects>());
@@ -125,6 +126,8 @@ public sealed partial class TribeOfBattle {
 		#region FSM Changes
 
 		#region Intro
+
+		fsm.RemoveAction("Init", 6);
 
 		// Sync with Mantis Lords roar
 		fsm.RemoveAction("Cloth?", 1);
