@@ -43,6 +43,13 @@ public sealed partial class TribeOfBattle {
 						BossSceneController.Instance.BossLevel == 0 ? 3550 : 4750;
 			}, 4);
 
+		if (MantisGodsOn()) {
+			new[] { 1, 2 }
+				.Map(i => "Battle Sub/Mantis Lord S" + i)
+				.Map(path => battle.Child(path)!)
+				.ForEach(go => go.AddComponent<MantisHPFix>());
+		}
+
 		return;
 
 	Inactive:

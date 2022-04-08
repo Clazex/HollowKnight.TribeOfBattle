@@ -4,6 +4,14 @@
 	"Title/Super": "",
 	"Title/Main": "战斗部落",
 	"Title/Sub": "",
+	"Gods/Name": "战斗部落神",
+	"Gods/Desc": "重聚的骄傲之神",
+	"Gods/Title/P1/Super": "",
+	"Gods/Title/P1/Main": "螳螂神",
+	"Gods/Title/P1/Sub": "",
+	"Gods/Title/P2/Super": "",
+	"Gods/Title/P2/Main": "战斗部落神",
+	"Gods/Title/P2/Sub": "",
 	"Option/ModifyPantheons": "更改门内",
 	"Option/UnfixBugs": "还原 Bug"
 }

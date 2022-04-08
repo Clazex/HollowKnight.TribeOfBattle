@@ -4,6 +4,14 @@
 	"Title/Super": "",
 	"Title/Main": "Tribe",
 	"Title/Sub": "Of Battle",
+	"Gods/Name": "Gods of Battle",
+	"Gods/Desc": "Reunited gods of pride",
+	"Gods/Title/1/Super": "Mantis",
+	"Gods/Title/1/Main": "Gods",
+	"Gods/Title/1/Sub": "",
+	"Gods/Title/2/Super": "",
+	"Gods/Title/2/Main": "Gods",
+	"Gods/Title/2/Sub": "Of Battle",
 	"Option/ModifyPantheons": "Modify Pantheons",
 	"Option/UnfixBugs": "Unfix Bugs"
 }

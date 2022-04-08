@@ -8,4 +8,10 @@ internal static class EnumerableUtil {
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	internal static IEnumerable<T> Filter<T>(this IEnumerable<T> self, Func<T, bool> f) =>
 		self.Where(f);
+
+	internal static void ForEach<T>(this IEnumerable<T> self, Action<T> f) {
+		foreach (T i in self) {
+			f(i);
+		}
+	}
 }
