@@ -36,19 +36,21 @@ public sealed partial class TribeOfBattle : Mod, ITogglableMod {
 		Instance = null;
 	}
 
-	private static string Localize(string key, string sheet, string orig) => sheet switch {
-		_ when running is false => orig,
-		"CP3" => key switch {
-			"NAME_MANTIS_LORD_V" => "Name".Localize(),
-			"GG_S_MANTIS_LORD_V" => "Desc".Localize(),
-			_ => orig
-		},
-		"Titles" => key switch {
-			"SISTERS_SUPER" => "Title/Super".Localize(),
-			"SISTERS_MAIN" => "Title/Main".Localize(),
-			"SISTERS_SUB" => "Title/Sub".Localize(),
+	private static string Localize(string key, string sheet, string orig) =>
+		running || GameManager.instance.sceneName == "GG_Workshop"
+		? sheet switch {
+			"CP3" => key switch {
+				"NAME_MANTIS_LORD_V" => "Name".Localize(),
+				"GG_S_MANTIS_LORD_V" => "Desc".Localize(),
+				_ => orig
+			},
+			"Titles" => key switch {
+				"SISTERS_SUPER" => "Title/Super".Localize(),
+				"SISTERS_MAIN" => "Title/Main".Localize(),
+				"SISTERS_SUB" => "Title/Sub".Localize(),
+				_ => orig,
+			},
 			_ => orig,
-		},
-		_ => orig,
-	};
+		}
+		: orig;
 }
