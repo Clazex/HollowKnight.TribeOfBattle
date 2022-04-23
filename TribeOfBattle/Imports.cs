@@ -8,9 +8,11 @@ global using HutongGames.PlayMaker;
 
 global using Modding;
 
+global using Osmi.Utils;
+
 global using Satchel;
 
-global using TribeOfBattle.Util;
+global using TribeOfBattle.Utils;
 
 global using UnityEngine;
 global using UnityEngine.SceneManagement;

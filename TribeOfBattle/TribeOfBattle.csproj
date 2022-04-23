@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<AssemblyTitle>TribeOfBattle</AssemblyTitle>
-		<Version>1.1.0</Version>
+		<Version>1.1.1</Version>
 		<Authors>Clazex</Authors>
 
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -78,6 +78,10 @@
 		</Reference>
 		<Reference Include="HealthShare">
 			<HintPath>$(HKModRefs)/HealthShare/HealthShare.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="Osmi">
+			<HintPath>$(HKModRefs)/Osmi/Osmi.dll</HintPath>
 			<Private>false</Private>
 		</Reference>
 	</ItemGroup>
