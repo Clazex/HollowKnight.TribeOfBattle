@@ -28,7 +28,7 @@ public sealed partial class TribeOfBattle {
 		ms.Close();
 
 		Texture2D texture2D = new(2, 2);
-		texture2D.LoadImage(bytes, true);
+		_ = texture2D.LoadImage(bytes, true);
 
 		return texture2D;
 	});
@@ -66,7 +66,7 @@ public sealed partial class TribeOfBattle {
 		UObject.DestroyImmediate(prefab.Child("Pt Mist")!);
 		UObject.DestroyImmediate(prefab.GetComponent<EnemyDeathEffects>());
 		UObject.DestroyImmediate(prefab.GetComponent<InfectedEnemyEffects>());
-		prefab.AddComponent<DontClinkGates>();
+		_ = prefab.AddComponent<DontClinkGates>();
 		prefab.AddComponent<NonBouncer>().active = false;
 
 		#region Dream Convo
