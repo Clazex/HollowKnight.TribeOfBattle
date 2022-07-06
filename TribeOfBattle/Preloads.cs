@@ -1,4 +1,3 @@
-using System.IO;
 
 using HutongGames.PlayMaker.Actions;
 
@@ -16,22 +15,12 @@ public sealed partial class TribeOfBattle {
 
 	private static tk2dSprite? traitorSprite = null;
 	private static Texture2D? traitorTexOrig = null;
-	private static readonly Lazy<Texture2D> traitorTex = new(() => {
-		Stream stream = typeof(TribeOfBattle).Assembly
-			.GetManifestResourceStream("TribeOfBattle.Resources.TraitorLord.png");
-		MemoryStream ms = new((int) stream.Length);
-
-		stream.CopyTo(ms);
-		stream.Close();
-
-		byte[] bytes = ms.ToArray();
-		ms.Close();
-
-		Texture2D texture2D = new(2, 2);
-		_ = texture2D.LoadImage(bytes, true);
-
-		return texture2D;
-	});
+	private static readonly Lazy<Texture2D> traitorTex = new(() =>
+		typeof(TribeOfBattle)
+			.Assembly
+			.GetManifestResourceStream("TribeOfBattle.Resources.TraitorLord.png")
+			.ReadToTexture2D()
+	);
 
 	public override List<(string, string)> GetPreloadNames() => new() {
 		("GG_Mantis_Lords_V", "Mantis Battle/Battle Main/Mantis Lord"),
@@ -62,7 +51,7 @@ public sealed partial class TribeOfBattle {
 
 		prefab.name = "TOB Traitor Lord";
 		prefab.transform.SetPosition2D(35f, 22f);
-		prefab.transform.SetScaleX(prefab.transform.GetScaleX() * -1);
+		prefab.GetTransformDelegate().ScaleX *= -1;
 		UObject.DestroyImmediate(prefab.Child("Pt Mist")!);
 		UObject.DestroyImmediate(prefab.GetComponent<EnemyDeathEffects>());
 		UObject.DestroyImmediate(prefab.GetComponent<InfectedEnemyEffects>());

@@ -1,3 +1,5 @@
+using Osmi;
+
 namespace TribeOfBattle;
 
 public sealed partial class TribeOfBattle : Mod, ITogglableMod {
@@ -15,7 +17,7 @@ public sealed partial class TribeOfBattle : Mod, ITogglableMod {
 	public override string GetVersion() => Version.Value;
 
 	public TribeOfBattle() =>
-		USceneManager.activeSceneChanged += EditScene;
+		OsmiHooks.SceneChangeHook += EditScene;
 
 	public override void Initialize(Dictionary<string, Dictionary<string, GameObject>> preloads) {
 		if (Instance != null) {
@@ -25,7 +27,6 @@ public sealed partial class TribeOfBattle : Mod, ITogglableMod {
 
 		Instance = this;
 		SavePreloads(preloads);
-		HealthShare.HealthShare.GlobalSettings.modifyBosses = false;
 
 		On.HeroController.Start += HookLangGetDelayed;
 	}

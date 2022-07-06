@@ -1,11 +1,9 @@
-using HealthShare;
-
 namespace TribeOfBattle;
 
 public sealed partial class TribeOfBattle {
 	private static bool running = false;
 
-	private static void EditScene(Scene _, Scene next) {
+	private static void EditScene(Scene prev, Scene next) {
 		if (Instance == null) {
 			goto Inactive;
 		}

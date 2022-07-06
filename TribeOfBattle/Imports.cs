@@ -19,4 +19,3 @@ global using UnityEngine.SceneManagement;
 
 global using Lang = Language.Language;
 global using UObject = UnityEngine.Object;
-global using USceneManager = UnityEngine.SceneManagement.SceneManager;
