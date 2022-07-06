@@ -66,7 +66,7 @@ public sealed partial class TribeOfBattle {
 		UObject.DestroyImmediate(prefab.Child("Pt Mist")!);
 		UObject.DestroyImmediate(prefab.GetComponent<EnemyDeathEffects>());
 		UObject.DestroyImmediate(prefab.GetComponent<InfectedEnemyEffects>());
-		_ = prefab.AddComponent<DontClinkGates>();
+		ReflectionHelper.SetField(prefab.GetComponent<HealthManager>(), "preventInvincibleEffect", true);
 		prefab.AddComponent<NonBouncer>().active = false;
 
 		#region Dream Convo
